@@ -1,0 +1,153 @@
+Algoritmo SalonAtenea
+	Dimension turnos(12)//turnos tomados en el dia 
+	Dimension dias(5)
+	Dimension horas(12)
+	
+	Definir Dia_Elegido, Hora_Elegida Como Cadena
+	Definir Opcion_Menu, Cantidad_Turno Como Entero
+	
+	Escribir "¡Bienvenid@ a ModernAtenea!"
+	
+	Repetir
+		Escribir "¿Para que servicio desea reservar turno?"
+		Escribir "1.Manicura"
+		Escribir "2.Peluqueria"
+		Escribir "3.Pestañas"
+		Escribir "4.Salir"
+		Leer servicio
+		
+		Segun servicio hacer
+			1: dias(1)<- "Lunes "
+				dias(2)<- "Martes "
+				dias(3)<- "Miércoles "
+				dias(4) <- "Jueves "
+				dias(5)<- "Viernes "
+				
+				horas(1)<- "8:00 AM - 10:00 AM"
+				horas(2)<- "10:30 AM - 12:30 PM"
+				horas(3)<- "16:00 PM - 18:00 PM"
+				horas(4)<- "18:30 PM - 20:30 PM"
+				Cantidad_Turno<-1
+				
+				Escribir "Seleccione el dia para el turno:"
+				Para i<-1 Hasta 5
+					Escribir i," . ",dias(i)
+				FinPara
+				Leer Dia_Elegido
+				Escribir "Seleccione la hora para el turno:"
+				Para i<-1 Hasta 4
+					Escribir i, " . ",horas(i)
+				FinPara
+				Leer Hora_Elegida
+				
+				TurnoElegido<-Concatenar(Dia_Elegido,Hora_Elegida)
+				Si Cantidad_Turno=1 Entonces
+					turnos(Cantidad_Turno)<-TurnoElegido
+					Escribir "Turno reservado exitosamente"
+				SiNo
+					Existe<-Falso
+					Para i<-1 Hasta Cantidad_Turno Hacer
+						Si turnos(i)=TurnoElegido Entonces
+							Existe<-Verdadero
+						FinSi
+					FinPara
+					Si Existe Entonces
+						Escribir "El turno seleccionado ya esta ocupado. Por favor, elija otro"
+					SiNo
+						turnos(Cantidad_Turno)<-TurnoElegido
+						Escribir "Turno reservado exitosamente"
+					FinSi
+					
+				FinSi
+			2:dias(1) <- "Lunes "
+				dias(2)<-"Martes"
+				dias(3)<-"Miercoles"
+				dias(4)<-"Jueves"
+				dias(5)<- "Viernes"
+				
+				horas(5)<-"8:00 AM - 11:00 AM"
+				horas(6)<-"13:00 PM - 16:00 PM"
+				horas(7)<-"17:30 PM - 20:00 PM"
+				Cantidad_Turno<-1
+				
+				Escribir "Seleccione el dia del turno:"
+				Para i<-1 Hasta 5
+					Escribir i, " . ", dias(i)
+				FinPara
+				Leer Dia_Elegido
+				
+				Escribir "Seleccione la hora para el turno:"
+				Para i<-5 Hasta  7
+					Escribir i," . ", horas(i)
+				FinPara
+				Leer Hora_Elegida
+				
+				TurnoElegido<-Concatenar(Dia_Elegido,Hora_Elegida)
+				Si Cantidad_Turno=1 Entonces
+					turnos(Cantidad_Turno)<-TurnoElegido
+					Mostrar "Turno reservado exitosamente"
+				SiNo
+					Existe<-Falso
+					Para i<-1 Hasta Cantidad_Turno Hacer
+						Si turnos(i)=TurnoElegido Entonces
+							Existe<-Verdadero
+						FinSi
+					FinPara
+					Si Existe Entonces
+						Escribir "El turno seleccionado ya esta ocupado. Por favor, elija otro"
+					SiNo
+						turnos(Cantidad_Turno)<- TurnoElegido
+						Escribir "Turno reservado exitosamente"
+					FinSi
+				FinSi
+			3: dias(1)<-"Lunes"
+				dias(2)<-"Martes"
+				dias(3)<-"Miercoles"
+				dias(4)<-"Jueves"
+				dias(5)<-"Viernes"
+				
+				horas(8)<-"8:00 AM - 9:30 AM"
+				horas(9)<-"10:00 AM - 11:30 AM"
+				horas(10)<-"15:00 PM - 16:30 PM"
+				horas(11)<-"17:00 PM - 18:30 PM"
+				horas(12)<-"19:00 PM - 20:30 PM"
+				Cantidad_Turno<-1
+				
+				Escribir "Seleccione el dia del turno:"
+				Para i<-1 Hasta 5 
+					Escribir i," . ", dias(i)
+				FinPara
+				Leer Dia_Elegido
+				
+				Escribir "Seleccione la hora para el turno:"
+				Para i<-8 Hasta 12
+					Escribir i, " . ",horas(i)
+				FinPara
+				Leer Hora_Elegida
+				
+				TurnoElegido<-Concatenar(Dia_Elegido,Hora_Elegida)
+				Si Cantidad_Turno=1 Entonces
+					turnos(Cantidad_Turno)<-TurnoElegido
+					Escribir "Turno reservado exitosamente"
+				SiNo
+					Existe<-Falso
+					Para i<-1 Hasta Cantidad_Turno Hacer
+						Si turnos(i)=TurnoElegido Entonces
+							Existe<-Verdadero
+						FinSi
+					FinPara
+					Si Existe Entonces
+						Escribir "El turno seleccionado ya esta ocupado. Por favor, elija otro"
+					SiNo
+						turnos(Cantidad_Turno)<-TurnoElegido
+						Escribir "Turno reservado exitosamente"
+					FinSi
+				FinSi
+		    4: Escribir "¡Hasta luego! :) "
+		FinSegun 
+		
+	 Hasta Que servicio=4
+	
+	
+	
+FinAlgoritmo
